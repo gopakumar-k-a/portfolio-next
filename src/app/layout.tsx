@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-
+import Provider from "./provider";
+import Navbar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+// import motion from 'fram'
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -24,11 +27,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50 dark:bg-slate-50`}
       >
-        {children}
+        <Provider>
+          <Navbar />
+          {children}
+          {/* <Footer /> */}
+        </Provider>
       </body>
     </html>
   );

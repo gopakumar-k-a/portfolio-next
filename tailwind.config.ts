@@ -8,11 +8,34 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        bowlby: ['"Bowlby One"', "sans-serif"],
+        doto: ['"Doto"', "sans-serif"],
+        montserrat: ['"Montserrat"', "sans-serif"],
+        poppins: ['"Poppins"', "serif"],
+      },
+      fontWeight: {
+        thin: "100",
+        extralight: "200",
+        light: "300",
+        regular: "400",
+        medium: "500",
+        semibold: "600",
+        bold: "700",
+        extrabold: "800",
+        black: "900",
+      },
+      fontStyle: {
+        italic: "italic",
+        normal: "normal",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
     },
+    
   },
   plugins: [],
+  darkMode:'class',
 } satisfies Config;

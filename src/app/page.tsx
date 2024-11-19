@@ -1,101 +1,133 @@
-import Image from "next/image";
+"use client";
 
+import Hero from "@/components/Hero";
+import { useEffect } from "react";
+import { delay, motion } from "framer-motion";
 export default function Home() {
+  useEffect(() => {
+    console.log("loaded home");
+  }, []);
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <div className="w-screen dark:bg-gray-900 bg-gray-50 ">
+        <Hero />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <motion.div
+          // initial={{ opacity: 1 }}
+          // whileInView={{ opacity: 0 }}
+          // viewport={{ margin: "-200px" }}
+          className="dark:bg-gray-900 bg-gray-50"
+        >
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, transition: { delay: 1 } }}
+            // viewport={{ margin: "-1000px" }}
+            className="dark:text-white text-black"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+            vehicula maximus felis. Phasellus euismod libero ac justo mollis
+            elementum. Donec tincidunt finibus leo mollis placerat. Aenean
+            tristique, nunc a vehicula sollicitudin, magna lorem lacinia est, in
+            molestie dui purus at mauris. Proin dictum nunc eget nisl convallis
+            viverra. Nulla sodales risus id aliquet fringilla. Cras nec turpis
+            quam. Ut posuere lorem erat, vitae hendrerit enim porttitor ac.
+            Maecenas gravida hendrerit ex sit amet tincidunt. Nulla sit amet
+            dictum augue. Curabitur sed venenatis turpis. Aenean non augue
+            dapibus, condimentum libero ut, elementum ex. Nunc dignissim
+            tristique maximus. Vestibulum leo nunc, dignissim eget vehicula in,
+            aliquet id magna. Etiam ornare tellus eu nibh efficitur porttitor.
+            Vestibulum sit amet ultricies lorem, vitae congue augue. Maecenas
+            tristique augue vel imperdiet pulvinar. Donec facilisis pretium
+            turpis, a pretium urna posuere vitae. In in turpis eu velit vehicula
+            luctus sit amet eget nulla. Sed dictum felis velit, at mattis mi
+            sollicitudin eu. Ut auctor aliquam magna, ut aliquet sem ullamcorper
+            ac. Cras faucibus vel odio eu luctus. Quisque cursus lobortis purus,
+            lacinia ultricies nulla pulvinar fringilla. Donec dictum tempus
+            fringilla. Cras a consequat turpis. Nunc sit amet euismod libero.
+            Orci varius natoque penatibus et magnis dis parturient montes,
+            nascetur ridiculus mus. Morbi maximus elit eu metus feugiat
+            molestie. Nullam porta neque auctor turpis posuere, lobortis rutrum
+            neque vehicula. Aenean lacinia dui eu tellus egestas luctus.
+            Maecenas pretium placerat eros, sit amet maximus magna blandit ac.
+            Nunc eleifend, turpis ac tempor efficitur, mi risus ultricies augue,
+            id consequat eros tortor id odio. Duis commodo nulla faucibus ipsum
+            dignissim dignissim. Praesent tincidunt, massa ac consequat aliquam,
+            diam lacus suscipit nisl, ut congue odio quam sit amet nisi. Sed
+            fermentum tortor quis ligula lacinia feugiat. Nullam id hendrerit
+            nibh. Donec non lorem ornare, aliquam urna faucibus, dignissim
+            tortor. Quisque id odio quis magna fringilla tempor. Orci varius
+            natoque penatibus et magnis dis parturient montes, nascetur
+            ridiculus mus. Suspendisse convallis dui blandit turpis mollis
+            convallis. Curabitur ut sollicitudin mauris. Curabitur at fermentum
+            mauris. Nullam eu accumsan nulla. Vestibulum sed nunc facilisis,
+            ornare felis ac, hendrerit leo. Vestibulum fermentum pretium
+            commodo. Mauris nibh enim, venenatis vitae ullamcorper vitae,
+            condimentum lobortis felis. Quisque sagittis dignissim sem, ut
+            pellentesque ex eleifend ut. Integer vitae dolor sem. Orci varius
+            natoque penatibus et magnis dis parturient montes, nascetur
+            ridiculus mus. Vestibulum ipsum sapien, semper venenatis interdum a,
+            facilisis accumsan diam. Etiam id tempus massa. Integer scelerisque
+            lectus tortor, ornare porttitor est pulvinar a. Maecenas pharetra id
+            nisi sit amet suscipit. Donec euismod neque ac velit viverra, id
+            posuere ipsum rhoncus. Fusce mattis dolor vitae nunc volutpat, sit
+            amet fringilla ipsum convallis. Quisque fringilla elit nec nisl
+            pretium euismod. Mauris eros velit, volutpat vulputate erat non,
+            sagittis vestibulum tellus. Curabitur purus tellus, posuere quis
+            neque in, posuere cursus ligula. Vivamus aliquam dictum risus sed
+            posuere. Nam eget est id nulla pellentesque elementum. Cras luctus,
+            neque in mattis pharetra, mi dui tristique velit, eget condimentum
+            nulla lectus ac ante. Orci varius natoque penatibus et magnis dis
+            parturient montes, nascetur ridiculus mus. Praesent ante leo,
+            laoreet vel ex at, euismod blandit sapien. Pellentesque habitant
+            morbi tristique senectus et netus et malesuada fames ac turpis
+            egestas. Pellentesque ultricies, nisl in tempor bibendum, dolor
+            ipsum sagittis sapien, non auctor velit nisi sit amet mauris. Sed
+            egestas convallis dictum. Donec ac nibh quis dolor varius lobortis.
+            Suspendisse quis orci non nisl dignissim varius. Duis rhoncus ante
+            elit, non accumsan turpis porta ac. Vivamus in aliquet tortor, vel
+            pharetra lorem. Nunc vel viverra nisi. Morbi commodo lorem sed nisl
+            volutpat tempor. Nulla facilisi. Donec ex augue, iaculis eget
+            egestas a, ultrices sit amet turpis. Nam vel sapien maximus,
+            bibendum neque et, tempor augue. Donec nec sem at neque feugiat
+            vehicula. Nulla pharetra ante nunc, in suscipit nisl efficitur quis.
+            Vestibulum bibendum, urna quis rutrum feugiat, tortor enim rutrum
+            eros, a mollis risus nibh vel purus. Nam vulputate urna sit amet
+            quam faucibus, sed tempus nisl fringilla. Pellentesque habitant
+            morbi tristique senectus et netus et malesuada fames ac turpis
+            egestas. Donec tristique tellus ligula, ac pulvinar est tempor non.
+            Mauris vestibulum tellus vel purus vestibulum dapibus. Maecenas
+            iaculis, tellus eu sodales hendrerit, velit magna varius tellus, sed
+            dignissim ante mi nec tortor. Maecenas tellus tortor, mattis eu erat
+            et, tincidunt posuere nisl. Aliquam luctus ultricies augue, non
+            ultrices felis. Suspendisse finibus ante non pretium porttitor. Sed
+            nisi velit, posuere eu risus vel, rutrum elementum quam. Cras
+            ultrices cursus nisi eu efficitur. Aenean sit amet neque ut lorem
+            feugiat interdum. Phasellus eu mollis ex. Nullam vitae venenatis mi,
+            ac aliquet nibh. Class aptent taciti sociosqu ad litora torquent per
+            conubia nostra, per inceptos himenaeos. Proin eget ex quis risus
+            facilisis gravida vel sed nisi. Nulla mauris libero, luctus sed
+            tristique in, tincidunt at quam. Integer eu dignissim nibh. Sed
+            porta porttitor mattis. Sed lacinia, velit et bibendum viverra, diam
+            sem sodales neque, non tincidunt diam libero dapibus nisi.
+            Suspendisse hendrerit elit ac odio lobortis rutrum. Nam nunc odio,
+            mollis ut rhoncus ut, hendrerit sed justo. Aenean tellus nisi,
+            mattis a odio id, vehicula blandit lectus. Orci varius natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            Mauris egestas ultrices nisi et dictum. Aenean eget eros sapien.
+            Vestibulum vitae varius orci. In ut volutpat diam. Duis metus ex,
+            lacinia cursus laoreet id, mollis sit amet quam. Cras venenatis quam
+            suscipit mattis elementum. Ut at pulvinar turpis. Aliquam erat
+            volutpat. Vivamus sollicitudin neque eu nunc auctor rutrum. Sed
+            bibendum eros ac tellus congue, in congue massa euismod. Ut in
+            faucibus dolor. Suspendisse mi risus, tristique non orci vitae,
+            dignissim consequat nisi. Maecenas et ante vel est luctus accumsan
+            vel quis lectus. Ut pharetra facilisis tellus, ut maximus nibh
+            dictum ut. Quisque nisl enim, facilisis sit amet magna ac, viverra
+            efficitur lectus. Suspendisse potenti. Aliquam erat volutpat.
+            Vestibulum nec justo vitae nunc auctor sodales a placerat arcu.
+          </motion.p>
+        </motion.div>
+      </div>
+    </>
   );
 }
