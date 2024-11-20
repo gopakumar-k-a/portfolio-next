@@ -1,11 +1,19 @@
-import React from 'react'
-
+import EaseInOut from "@/components/transitions/EaseInOut";
+import React from "react";
+import ContactUs from "@/components/ContactUs";
 function Contact() {
   return (
-    <div>
-      <h1>contact page </h1>
-    </div>
-  )
+    <>
+      <div className="dark:bg-gray-900 font-poppins bg-white h-full w-screen flex justify-center">
+        <div className="w-full h-full">
+          <EaseInOut>
+            {/* <ContactForm /> */}
+            <ContactUs />
+          </EaseInOut>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default Contact
+export default Contact;

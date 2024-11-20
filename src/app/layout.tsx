@@ -4,6 +4,7 @@ import "./globals.css";
 import Provider from "./provider";
 import Navbar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import Spinner from "@/components/Spinner/Spinner";
 // import motion from 'fram'
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,9 +33,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50 dark:bg-slate-50`}
       >
         <Provider>
+          
+          {/* <Spinner /> */}
           <Navbar />
           {children}
-          {/* <Footer /> */}
+          <Footer />
         </Provider>
       </body>
     </html>

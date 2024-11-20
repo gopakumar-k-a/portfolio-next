@@ -4,8 +4,11 @@ import ThemeSwitch from "./ThemeSwitch";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { RxCross2 } from "react-icons/rx";
+import Spinner from "./Spinner/Spinner";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
+
   const containerVariantsMobile = {
     hidden: { opacity: 0 },
     visible: {
@@ -23,11 +26,10 @@ const Navbar = () => {
   return (
     <>
       {/* <div className="flex flex-wrap place-items-center h-screen"> */}
-
-      <section className="relative mx-auto flex justify-center pt-4  dark:bg-gray-900 dark:text-white bg-gray-50 text-black">
-        {/* Navbar */}
+      {/* {loading ? <Spinner />} */}
+      <section className="z-40 sticky top-0 mx-auto flex justify-center pt-4  dark:bg-gray-900 dark:text-white bg-gray-50 text-black">
         <nav className="flex justify-between dark:bg-gray-900 dark:text-white bg-gray-50 text-black w-11/12 rounded-md drop-shadow-md">
-          <div className="px-5 xl:px-12 py-6 flex w-full items-center dark:bg-gray-900 dark:text-white bg-gray-50 text-black rounded-md">
+          <div className="px-5 xl:px-12  flex w-full items-center dark:bg-gray-900 dark:text-white bg-gray-50 text-black rounded-md">
             <div>
               <motion.p
                 initial={{ y: -50, opacity: 0 }}
@@ -45,7 +47,6 @@ const Navbar = () => {
                 Full Stack Developer
               </motion.p>
             </div>
-            {/* Nav Links */}
             <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
               <li>
                 <Link
@@ -55,29 +56,30 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
+
               <li>
                 <a
                   className="dark:hover:text-gray-300 hover:text-gray-500 font-poppins font-medium"
-                  href="#"
-                >
-                  Category
-                </a>
-              </li>
-              <li>
-                <a
-                  className="dark:hover:text-gray-300 hover:text-gray-500 font-poppins font-medium"
-                  href="#"
+                  href="/project"
                 >
                   projects
                 </a>
               </li>
               <li>
-                <a
+                <Link
                   className="dark:hover:text-gray-300 hover:text-gray-500 font-poppins font-medium"
-                  href="#"
+                  href="/about"
                 >
-                  Contact Us
-                </a>
+                  about me
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="dark:hover:text-gray-300 hover:text-gray-500 font-poppins font-medium"
+                  href="/contact"
+                >
+                  Contact me
+                </Link>
               </li>
             </ul>
             {/* Header Icons */}
@@ -147,6 +149,9 @@ const Navbar = () => {
               <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-500"></span>
             </span> */}
           </a>
+          <div className="navbar-burger self-center mr-2 xl:hidden">
+            <ThemeSwitch />
+          </div>
           <div
             onClick={() => setIsMobileMenuOpen(true)}
             className="navbar-burger self-center mr-12 xl:hidden"
@@ -187,25 +192,30 @@ const Navbar = () => {
               variants={containerVariantsMobile}
             >
               <motion.li variants={itemVariantsMobile}>
-                <a href="/" className="text-2xl hover:text-gray-400">
+                <Link href="/" className="text-2xl hover:text-gray-400">
                   Home
-                </a>
+                </Link>
               </motion.li>
               <motion.li variants={itemVariantsMobile}>
-                <a href="#" className="text-2xl hover:text-gray-400">
+                <Link href="/project" className="text-2xl hover:text-gray-400">
                   Projects
+                </Link>
+              </motion.li>
+              <motion.li variants={itemVariantsMobile}>
+                <a href="/about" className="text-2xl hover:text-gray-400">
+                  about me
                 </a>
               </motion.li>
               <motion.li variants={itemVariantsMobile}>
-                <a href="#" className="text-2xl hover:text-gray-400">
-                  Contact Us
+                <a href="/contact" className="text-2xl hover:text-gray-400">
+                  contact me
                 </a>
               </motion.li>
             </motion.ul>
           </div>
         </div>
       )}
-      {/* </div> */}
+
     </>
   );
 };
