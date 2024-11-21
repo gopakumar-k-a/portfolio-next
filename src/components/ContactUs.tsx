@@ -7,6 +7,7 @@ import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { sendMail } from "@/utils/send-mail";
 import Spinner from "./Spinner/Spinner";
+import Alert from "./notification/AlertComponent";
 interface FormData {
   name: string;
   email: string;
@@ -27,8 +28,11 @@ const ContactUs = () => {
     message?: string;
   }>({});
 
-  const [loading, setLoading] = useState(false);
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [alert, setAlert] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -62,13 +66,30 @@ const ContactUs = () => {
       //     "message": "sdfdsf"
       // }
       const { email, name, message, phone } = formData;
-      const info = await sendMail({
-        email,
-        name,
-        message,
-        phone,
-      });
-      console.log("info ", info);
+      try {
+        setIsLoading(true);
+
+        // Attempt to send the mail
+        const info = await sendMail({
+          email,
+          name,
+          message,
+          phone,
+        });
+
+        if (!info) {
+          setAlert({ message: "error sending message", type: "error" });
+        } else {
+          setAlert({ message: "message send successfully", type: "success" });
+        }
+        setTimeout(() => setAlert(null), 3000);
+      } catch (error) {
+        console.error("An error occurred while sending the message: ", error);
+        setAlert({ message: "error sending message", type: "error" });
+      } finally {
+        setTimeout(() => setAlert(null), 4000);
+        setIsLoading(false);
+      }
 
       console.log("Form submitted successfully:", formData);
       setFormData({ name: "", email: "", phone: "", message: "" });
@@ -208,14 +229,43 @@ const ContactUs = () => {
                 </div>
 
                 {/* Submit Button */}
-                <button
+                {/* <button
                   type="submit"
                   className="w-full bg-indigo-500 hover:bg-indigo-600 dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition-all"
                 >
                   Send Message
+                </button> */}
+                <button
+                  type="submit"
+                  // onClick={handleClick}
+                  disabled={isLoading}
+                  className={`w-full ${
+                    isLoading
+                      ? "bg-indigo-400"
+                      : "bg-indigo-500 hover:bg-indigo-600"
+                  } dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition-all flex items-center justify-center`}
+                >
+                  {isLoading ? (
+                    <>
+                      <div
+                        role="status"
+                        className="inline-block h-4 w-4 mr-2 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em]"
+                      >
+                        <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                          Loading...
+                        </span>
+                      </div>
+                      Sending...
+                    </>
+                  ) : (
+                    "Send Message"
+                  )}
                 </button>
               </form>
             </div>
+          </div>
+          <div className="space-y-2 p-4">
+            {alert && <Alert type={alert.type} message={alert.message} />}
           </div>
           <div className="md:w-full mt-6 dark:bg-gray-900 bg-white flex justify-center h-full md:h-full">
             <div className="flex gap-4 justify-center bg-gray-200 p-4 rounded-s-full rounded-e-full">
