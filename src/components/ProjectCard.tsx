@@ -5,7 +5,6 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import WebSiteNotAvailable from "./buttons/WebNotAvailable";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 function ProjectCard({
   headLine,
@@ -40,8 +39,10 @@ function ProjectCard({
       <div
         className={`${bgColor}  justify-between h-full shadow-lg rounded-lg p-6 max-w-full max-h-max text-center flex flex-col hover:scale-105 transition-transform duration-300 ease-in-out`}
       >
+         
         {/* Profile image and headline */}
         <div className="flex w-full">
+          
           <div className="p-2">
             <div className="w-16 h-16 bg-gray-300 rounded-full mx-auto mb-4 relative">
               <Image

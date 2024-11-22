@@ -26,6 +26,7 @@ import { SiCplusplus } from "react-icons/si";
 import { RiNextjsLine } from "react-icons/ri";
 import { TbBrandVite } from "react-icons/tb";
 import ProjectCard from "./ProjectCard";
+import FindGitHubCard from "./FindGitHubCard";
 const projectData = [
   {
     headLine: "JersyMan",
@@ -121,7 +122,7 @@ const projectData = [
     liveLink: "",
     githubLink: "",
     frontEndLinkGit: "https://github.com/gopakumar-k-a/OLX-Clone",
-    // backEndLinkGit: "https://github.com/gopakumar-k-a/usedMarketZone-backend",
+    backEndLinkGit: null,
     bgColor: "bg-red-400",
     image: "/project-logo/olx_logo.jpeg",
   },
@@ -139,7 +140,7 @@ const projectData = [
     liveLink: "",
     githubLink: "",
     frontEndLinkGit: "https://github.com/gopakumar-k-a/netflix-mini",
-    // backEndLinkGit: "https://github.com/gopakumar-k-a/usedMarketZone-backend",
+    backEndLinkGit: null,
     bgColor: "bg-lime-600",
     image: "/project-logo/netflix_logo.jpg",
   },
@@ -157,7 +158,7 @@ const projectData = [
     liveLink: "",
     githubLink: "",
     frontEndLinkGit: "https://github.com/gopakumar-k-a/to-do-REACT",
-    // backEndLinkGit: "https://github.com/gopakumar-k-a/usedMarketZone-backend",
+    backEndLinkGit: null,
     bgColor: "bg-blue-500",
     image: "/project-logo/todo_logo.png",
   },
@@ -192,6 +193,7 @@ function MyProjects() {
             />
           </motion.div>
         ))}
+        <FindGitHubCard />
       </div>
     </>
   );

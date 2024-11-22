@@ -4,11 +4,10 @@ import ThemeSwitch from "./ThemeSwitch";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { RxCross2 } from "react-icons/rx";
-import Spinner from "./Spinner/Spinner";
+import { usePathname } from "next/navigation";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
-
+  const pathname = usePathname();
   const containerVariantsMobile = {
     hidden: { opacity: 0 },
     visible: {
@@ -50,7 +49,10 @@ const Navbar = () => {
             <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
               <li>
                 <Link
-                  className="dark:hover:text-gray-300 hover:text-gray-500 font-poppins font-medium"
+                  className={`dark:hover:text-gray-300 hover:text-gray-500 font-poppins font-medium ${
+                    pathname === "/" ? "text-blue-500" : ""
+                  }`}
+                  // className="dark:hover:text-gray-300 hover:text-gray-500 font-poppins font-medium"
                   href="/"
                 >
                   Home
@@ -59,7 +61,10 @@ const Navbar = () => {
 
               <li>
                 <a
-                  className="dark:hover:text-gray-300 hover:text-gray-500 font-poppins font-medium"
+                  className={`dark:hover:text-gray-300 hover:text-gray-500 font-poppins font-medium ${
+                    pathname === "/project" ? "text-blue-500" : ""
+                  }`}
+                  // className="dark:hover:text-gray-300 hover:text-gray-500 font-poppins font-medium"
                   href="/project"
                 >
                   projects
@@ -67,7 +72,10 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  className="dark:hover:text-gray-300 hover:text-gray-500 font-poppins font-medium"
+                  className={`dark:hover:text-gray-300 hover:text-gray-500 font-poppins font-medium ${
+                    pathname === "/about" ? "text-blue-500" : ""
+                  }`}
+                  // className="dark:hover:text-gray-300 hover:text-gray-500 font-poppins font-medium"
                   href="/about"
                 >
                   about me
@@ -75,7 +83,10 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  className="dark:hover:text-gray-300 hover:text-gray-500 font-poppins font-medium"
+                  className={`dark:hover:text-gray-300 hover:text-gray-500 font-poppins font-medium ${
+                    pathname === "/contact" ? "text-blue-500" : ""
+                  }`}
+                  // className="dark:hover:text-gray-300 hover:text-gray-500 font-poppins font-medium"
                   href="/contact"
                 >
                   Contact me
@@ -84,10 +95,7 @@ const Navbar = () => {
             </ul>
             {/* Header Icons */}
             <div className="hidden xl:flex items-center space-x-5">
-              <a
-                className="dark:hover:text-gray-300 hover:text-gray-500"
-                href="#"
-              >
+              <div className="dark:hover:text-gray-300 hover:text-gray-500">
                 {/* <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -103,7 +111,7 @@ const Navbar = () => {
                   />
                 </svg> */}
                 <ThemeSwitch />
-              </a>
+              </div>
               {/* <a className="flex items-center hover:text-gray-200" href="#">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -182,9 +190,8 @@ const Navbar = () => {
           <div>
             <RxCross2
               onClick={() => setIsMobileMenuOpen(false)}
-              className="absolute top-10 right-10 h-7 w-7  text-gray-300 hover:text-white"
+              className="absolute top-10 right-10 h-7 w-7 text-gray-300 hover:text-white"
             />
-
             <motion.ul
               className="space-y-6 text-center"
               initial="hidden"
@@ -192,30 +199,53 @@ const Navbar = () => {
               variants={containerVariantsMobile}
             >
               <motion.li variants={itemVariantsMobile}>
-                <Link href="/" className="text-2xl hover:text-gray-400">
+                <Link
+                  href="/"
+                  className={`text-2xl hover:text-gray-400 ${
+                    pathname === "/" ? "text-blue-400" : ""
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)} 
+                >
                   Home
                 </Link>
               </motion.li>
               <motion.li variants={itemVariantsMobile}>
-                <Link href="/project" className="text-2xl hover:text-gray-400">
+                <Link
+                  href="/project"
+                  className={`text-2xl hover:text-gray-400 ${
+                    pathname === "/project" ? "text-blue-400" : ""
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)} 
+                >
                   Projects
                 </Link>
               </motion.li>
               <motion.li variants={itemVariantsMobile}>
-                <a href="/about" className="text-2xl hover:text-gray-400">
-                  about me
-                </a>
+                <Link
+                  href="/about"
+                  className={`text-2xl hover:text-gray-400 ${
+                    pathname === "/about" ? "text-blue-400" : ""
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)} 
+                >
+                  About Me
+                </Link>
               </motion.li>
               <motion.li variants={itemVariantsMobile}>
-                <a href="/contact" className="text-2xl hover:text-gray-400">
-                  contact me
-                </a>
+                <Link
+                  href="/contact"
+                  className={`text-2xl hover:text-gray-400 ${
+                    pathname === "/contact" ? "text-blue-400" : ""
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)} 
+                >
+                  Contact Me
+                </Link>
               </motion.li>
             </motion.ul>
           </div>
         </div>
       )}
-
     </>
   );
 };
