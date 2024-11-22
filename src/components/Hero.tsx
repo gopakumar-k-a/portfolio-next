@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { textVariants } from "@/components/animations/textAnimations";
 import DownloadResume from "./DownloadResume";
+// import AnimationComponent from "@/components/lottie/AnimationCompLotie";
+
 // import hero from '../../public/hero.jpg'
 function Hero() {
   const router = useRouter();
@@ -116,6 +118,8 @@ function Hero() {
                   <DownloadResume>Download Resume</DownloadResume>
                 </motion.button>
               </motion.div>
+              {/* <AnimationComponent/> */}
+
             </motion.div>
 
             <motion.div
@@ -124,6 +128,7 @@ function Hero() {
               transition={{ delay: 0.7, duration: 0.6 }}
               className="md:w-1/2 lg:w-1/3 mt-8 md:mt-0"
             >
+
               <img
                 src="/hero.jpg"
                 alt="Hero Image"

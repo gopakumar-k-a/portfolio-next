@@ -7,7 +7,6 @@ function Contact() {
       <div className="dark:bg-gray-900 font-poppins bg-white h-full w-screen flex justify-center">
         <div className="w-full h-full">
           <EaseInOut>
-            {/* <ContactForm /> */}
             <ContactUs />
           </EaseInOut>
         </div>

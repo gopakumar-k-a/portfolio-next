@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import AdvancedScrollSection from "@/components/ScrollSection";
+import AnimationComponent from "@/components/lottie/AnimationCompLotie";
 export default function Home() {
   const route = useRouter();
   useEffect(() => {
@@ -13,8 +14,10 @@ export default function Home() {
       <div className="w-screen dark:bg-gray-900 bg-gray-50 ">
         <AdvancedScrollSection>
           <Hero />
+          {/* <AnimationComponent /> */}
         </AdvancedScrollSection>
         <AdvancedScrollSection>
+          {/* <CloudAnimation/> */}
           <p className="dark:text-white text-black font-poppins font-normal md:text-2xl text-sm leading-[1.8] md:leading-[2] md:tracking-[2px] tracking-[1.8px] ">
             In 2023 I have completed{" "}
             <span className="font-bold">
@@ -69,7 +72,7 @@ export default function Home() {
         <AdvancedScrollSection>
           <p className="font-bold text-2xl underline text-red-500">
             {" "}
-          My Goal ?
+            My Goal ?
           </p>
           <p className="dark:text-white text-black font-poppins font-normal md:text-2xl text-sm leading-[1.8] md:leading-[2] md:tracking-[2px] tracking-[1.8px] ">
             My ultimate goal? To build systems that people love using. Whether
