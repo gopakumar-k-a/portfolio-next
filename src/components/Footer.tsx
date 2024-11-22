@@ -7,10 +7,8 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
-import { textVariants } from "@/components/animations/textAnimations";
 import { motion } from "framer-motion";
 import { FaHandshake } from "react-icons/fa6";
-import { div } from "framer-motion/client";
 function Footer() {
   const [showIcons, setShowIcons] = useState(false);
 

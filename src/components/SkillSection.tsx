@@ -19,7 +19,6 @@ import {
 } from "react-icons/si";
 import { SiCplusplus } from "react-icons/si";
 import { RiNextjsLine } from "react-icons/ri";
-import Image from "next/image";
 import { TbBrandVite } from "react-icons/tb";
 
 const SkillsSection = () => {

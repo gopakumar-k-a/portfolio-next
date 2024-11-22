@@ -61,7 +61,7 @@ function Hero() {
                 className="text-sm md:text-xl lg:text-2xl font-poppins dark:text-gray-400 text-gray-600 mb-8"
                 variants={textVariants.textFadeIn}
               >
-                I'm a{" "}
+                I&apos;m a{" "}
                 <span className="text-sm md:text-xl lg:text-2xl font-poppins font-semibold text-gray-400">
                   MERN Full Stack Developer
                 </span>{" "}

@@ -6,7 +6,7 @@ function NotFound() {
       <div className="text-center">
         <h1 className="mb-4 text-9xl font-semibold font-doto text-red-500">404</h1>
         <p className="mb-4 text-lg text-gray-600">
-          Oops! Looks like you're lost.
+          Oops! Looks like you&apos;re lost.
         </p>
         <div className="animate-bounce">
           <svg
@@ -24,7 +24,7 @@ function NotFound() {
           </svg>
         </div>
         <p className="mt-4 text-gray-600">
-          Let's get you back{" "}
+          Let&apos;s get you back{" "}
           <Link href="/" className="text-blue-500">
             home
           </Link>

@@ -6,7 +6,6 @@ import { HiOutlineMail } from "react-icons/hi";
 import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { sendMail } from "@/utils/send-mail";
-import Spinner from "./Spinner/Spinner";
 import Alert from "./notification/AlertComponent";
 interface FormData {
   name: string;
