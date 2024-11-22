@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import AdvancedScrollSection from "@/components/ScrollSection";
-import AnimationComponent from "@/components/lottie/AnimationCompLotie";
 export default function Home() {
   const route = useRouter();
   useEffect(() => {

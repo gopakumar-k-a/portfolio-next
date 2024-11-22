@@ -9,20 +9,14 @@ function AnimatedButton({
   Icon: JSX.Element;
   link: string;
 }) {
-  // const handleClick = () => {
-  //   // window.open(link, "_blank", "noopener,noreferrer");
-  //   window.location.href = link;
-  // };
+
   const handleClick = () => {
     window.open(link, "_blank", "noopener,noreferrer");
   };
   return (
     <>
-      {/* <div className="flex items-center justify-center h-screen"> */}
       <div className="relative group">
-        {/* <a href={link}> */}
           <button
-            // onClick={()=>router.push(link)}
             onClick={handleClick}
             className="relative inline-block p-px font-semibold leading-6 text-white bg-gray-800 shadow-2xl cursor-pointer rounded-xl shadow-zinc-900 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
           >
@@ -37,9 +31,7 @@ function AnimatedButton({
               </div>
             </span>
           </button>
-        {/* </a> */}
       </div>
-      {/* </div> */}
     </>
   );
 }

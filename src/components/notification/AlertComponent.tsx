@@ -30,15 +30,12 @@ const Alert = ({ type, message }: { type: AlertType; message: string }) => {
   const animationControls = useAnimation();
 
   useEffect(() => {
-    // Start fade-in animation
     animationControls.start({ opacity: 1, y: 0 });
 
-    // Start fade-out animation after 3 seconds
     const timeout = setTimeout(() => {
       animationControls.start({ opacity: 0, y: -20 });
     }, 3000);
 
-    // Cleanup timeout
     return () => clearTimeout(timeout);
   }, [animationControls]);
 

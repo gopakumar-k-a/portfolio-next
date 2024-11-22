@@ -36,7 +36,6 @@ const SkillsSection = () => {
       </div>
 
       <div className="flex items-center dark:bg-gray-900 bg-white text-white p2 md:p-4  rounded-lg">
-        {/* Icon Section */}
 
         <div className="grid grid-cols-6 gap-4 flex-grow">
           <FaHtml5 className="text-orange-500 text-4xl" />
@@ -59,7 +58,6 @@ const SkillsSection = () => {
           <SiCplusplus className="text-blue-600 text-4xl" />
         </div>
 
-        {/* Image Section */}
         <div className="ml-4 md:block hidden rounded-full">
           <img
             src="/hero.jpg"

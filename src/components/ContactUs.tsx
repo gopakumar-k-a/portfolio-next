@@ -47,29 +47,17 @@ const ContactUs = () => {
     e.preventDefault();
     const newErrors: { [key: string]: string } = {};
 
-    // Check for required fields
     if (!formData.name) newErrors.name = "Name is required.";
     if (!formData.email) newErrors.email = "Email is required.";
     if (!formData.message) newErrors.message = "Message is required.";
 
-    // If there are no errors, submit the form (e.g., send data to the server)
     if (Object.keys(newErrors).length === 0) {
       setErrors({});
-      //   email,
-      //   name,
-      //   message,
-      //   phone,
-      // {
-      //     "name": "sdfds",
-      //     "email": "gopak9145@gmail.com",
-      //     "phone": "sdfsd",
-      //     "message": "sdfdsf"
-      // }
+
       const { email, name, message, phone } = formData;
       try {
         setIsLoading(true);
 
-        // Attempt to send the mail
         const info = await sendMail({
           email,
           name,
@@ -93,18 +81,14 @@ const ContactUs = () => {
 
       console.log("Form submitted successfully:", formData);
       setFormData({ name: "", email: "", phone: "", message: "" });
-      // Submit logic here (e.g., API call)
     } else {
       setErrors(newErrors);
     }
   };
   return (
     <>
-      {/* {loading && <Spinner />} */}
-
       <div className="min-h-screen w-full bg-white dark:bg-gray-900 text-white  flex items-center justify-center py-10 px-5">
         <div className="container mx-auto w-11/12 md:w-8/12 h-full">
-          {/* Left Section */}
           <div className="grid grid-cols-2 gap-2">
             <div className="bg-orange-600 md:col-span-1 col-span-2 rounded-lg flex flex-col items-center justify-center p-4">
               <div className="flex items-center mb-2">
@@ -130,19 +114,13 @@ const ContactUs = () => {
               </a>
             </div>
 
-            {/* </div> */}
-
-            {/* Form Section */}
             <div className="col-span-2 bg-white dark:bg-gray-800 dark:text-white rounded-lg shadow-lg p-8">
-              {/* <div className="col-span-2"> */}
-              {/* </div> */}
               <h2 className="text-2xl font-bold mb-4">Contact me</h2>
               <p className="text-gray-600 dark:text-gray-300 mb-8">
                 Feel free to contact !
               </p>
               <form onSubmit={handleSubmit}>
                 <div className="grid sm:grid-cols-2 gap-4 mb-6">
-                  {/* Name Input */}
                   <div>
                     <label
                       htmlFor="name"
@@ -164,7 +142,6 @@ const ContactUs = () => {
                     )}
                   </div>
 
-                  {/* Email Input */}
                   <div>
                     <label
                       htmlFor="email"
@@ -187,7 +164,6 @@ const ContactUs = () => {
                   </div>
                 </div>
 
-                {/* Phone Number (Optional) */}
                 <div className="mb-6">
                   <label
                     htmlFor="phone"
@@ -205,8 +181,6 @@ const ContactUs = () => {
                     className="mt-1 block w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 dark:focus:ring-indigo-400 dark:focus:border-indigo-400 text-gray-900 dark:text-gray-100" // Adjust text color based on mode
                   />
                 </div>
-
-                {/* Message */}
                 <div className="mb-6">
                   <label
                     htmlFor="message"
@@ -228,13 +202,6 @@ const ContactUs = () => {
                   )}
                 </div>
 
-                {/* Submit Button */}
-                {/* <button
-                  type="submit"
-                  className="w-full bg-indigo-500 hover:bg-indigo-600 dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition-all"
-                >
-                  Send Message
-                </button> */}
                 <button
                   type="submit"
                   // onClick={handleClick}

@@ -1,7 +1,5 @@
 import React from "react";
-import AdvancedScrollSection from "@/components/ScrollSection";
 import ReachMe from "@/components/ReachMe";
-// import { textVariants } from "../../";
 import EaseInOut from "@/components/transitions/EaseInOut";
 import DownloadResume from "@/components/DownloadResume";
 import Link from "next/link";
@@ -13,22 +11,15 @@ function About() {
         <div className="w-11/12 md:w-8/12 h-full">
           <EaseInOut>
             <div className="bg-white dark:text-white text-black dark:bg-gray-900 p-6 rounded-md">
-              {/* <motion.div > */}
               <p className="font-bold text-xl md:text-3xl ">
                 MERN Full Stack Developer - dedicated to turning complex
                 challenges into elegant front-end and back-end solutions
               </p>
-              {/* </motion.div> */}
-              {/* <EaseInOut> */}
               <p className="font-light text-base  md:text-xl md:font-regular leading-[1.8] md:leading-[2] md:tracking-[2px] tracking-[1.8px]  mt-4">
                 As a self-taught MERN stack developer, I began my journey by
                 developing a variety of hands-on projects.
-                {/* <br />
-                <br /> */}
               </p>
-              {/* <div> */}
-                <SkillsSection />
-              {/* </div> */}
+              <SkillsSection />
               <p className="font-light text-base  md:text-xl md:font-regular leading-[1.8] md:leading-[2] md:tracking-[2px] tracking-[1.8px]  mt-4">
                 Technical Expertise: I focus on the MERN stack, utilizing
                 JavaScript, TypeScript, React.js,Next.js, Node.js, MongoDB, and
@@ -60,50 +51,9 @@ function About() {
                   </span>
                 </DownloadResume>
               </p>
-              {/* </EaseInOut> */}
             </div>
 
             <div className="about px-6 py-12">
-              {/* <h4 className="text-3xl font-semibold mb-4">Work Experiences</h4> */}
-
-              {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="multi-row">
-                <p className="text-xl font-bold">Mern Stack Development</p>
-                <p className="text-gray-600">@hotel</p>
-                <p className="text-gray-500">2021 - 2024</p>
-              </div>
-
-              <div className="multi-row">
-                <p className="text-xl font-bold">Product Designer</p>
-                <p className="text-gray-600">@InVision</p>
-                <p className="text-gray-500">2016 - 2020</p>
-              </div>
-
-              <div className="multi-row">
-                <p className="text-xl font-bold">Co-Founder and Designer</p>
-                <p className="text-gray-600">Achievo</p>
-                <p className="text-gray-500">2013 - 2015</p>
-              </div>
-
-              <div className="multi-row">
-                <p className="text-xl font-bold">User Interface Designer</p>
-                <p className="text-gray-600">Centralway</p>
-                <p className="text-gray-500">2013 - 2014</p>
-              </div>
-
-              <div className="multi-row">
-                <p className="text-xl font-bold">Graphic Designer</p>
-                <p className="text-gray-600">iTatu</p>
-                <p className="text-gray-500">2010 - 2011</p>
-              </div>
-
-              <div className="multi-row">
-                <p className="text-xl font-bold">Designer and Director</p>
-                <p className="text-gray-600">Freelance</p>
-                <p className="text-gray-500">2010 – Present</p>
-              </div>
-            </div> */}
-
               <h4 className="text-3xl font-semibold mt-12 mb-4 text-black dark:text-white">
                 Education
               </h4>
@@ -158,23 +108,6 @@ function About() {
                 Contact
               </Link>
               <ReachMe />
-
-              {/* <div className="multi-row contact-options flex gap-4">
-              <a
-                id="copyemail"
-                data-clipboard-text="hey@dejan.works"
-                className="text-indigo-500 hover:text-indigo-700"
-              >
-                hey@dejan.works
-              </a>
-              <a
-                href="https://www.linkedin.com/in/dejanmarkovic90/"
-                target="_blank"
-                className="text-indigo-500 hover:text-indigo-700"
-              >
-                Linkedin
-              </a>
-            </div> */}
             </div>
           </EaseInOut>
         </div>

@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import {
-  FaTwitter,
   FaInstagram,
   FaLinkedin,
   FaGithub,
@@ -19,7 +18,6 @@ function Footer() {
 
   return (
     <>
-      {/* Footer */}
       <div className="fixed bottom-0 right-0 mb-4 mr-4 z-10">
         {showIcons ? (
           <motion.div

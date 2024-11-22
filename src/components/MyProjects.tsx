@@ -1,30 +1,9 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaNodeJs,
-  FaGit,
-  FaAws,
-} from "react-icons/fa";
-import {
-  SiTypescript,
-  SiExpress,
-  SiRedux,
-  SiMysql,
-  SiMongodb,
-  SiBootstrap,
-  SiRedis,
-  SiTailwindcss,
-} from "react-icons/si";
+import { FaJs, FaReact, FaNodeJs } from "react-icons/fa";
+import { SiTypescript, SiExpress, SiMongodb } from "react-icons/si";
 import { DiRedis } from "react-icons/di";
-
-import { SiCplusplus } from "react-icons/si";
-import { RiNextjsLine } from "react-icons/ri";
-import { TbBrandVite } from "react-icons/tb";
 import ProjectCard from "./ProjectCard";
 import FindGitHubCard from "./FindGitHubCard";
 const projectData = [
@@ -167,7 +146,6 @@ function MyProjects() {
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
-        {/* <div className="flex flex-wrap gap-4"> */}
         {projectData.map((project, index) => (
           <motion.div
             initial={{
