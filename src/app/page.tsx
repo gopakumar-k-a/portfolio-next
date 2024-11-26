@@ -10,7 +10,7 @@ export default function Home() {
   }, []);
   return (
     <>
-      <div className="w-screen dark:bg-gray-900 bg-gray-50 ">
+      <div className=" dark:bg-gray-900 bg-gray-50 ">
         <AdvancedScrollSection>
           <Hero />
           {/* <AnimationComponent /> */}

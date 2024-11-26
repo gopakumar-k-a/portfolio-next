@@ -28,7 +28,7 @@ const AdvancedScrollSection = ({ children }: { children: React.ReactNode }) => {
   return (
     <motion.div
       ref={ref}
-      className="w-screen sticky offset-1 h-[100vh] flex justify-center items-center font-poppins text-xl md:text-2xl"
+      className="w-full sticky offset-1 h-[100vh] flex justify-center items-center font-poppins text-xl md:text-2xl"
       style={{
         opacity,
         y,
