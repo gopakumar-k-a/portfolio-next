@@ -62,8 +62,8 @@ const projectData = [
     liveLink: "",
     githubLink: "",
     frontEndLinkGit:
-      "https://github.com/gopakumar-k-a/usedMarketZone-frontend.git",
-    backEndLinkGit: "https://github.com/gopakumar-k-a/usedMarketZone-backend",
+      "https://github.com/gopakumar-k-a/imageDrive-frontend.git",
+    backEndLinkGit: "https://github.com/gopakumar-k-a/imageDrive-backend.git",
     bgColor: "bg-purple-400",
     image: "/project-logo/imagedrive_logo.png",
   },
