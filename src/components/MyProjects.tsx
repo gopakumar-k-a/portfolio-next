@@ -18,7 +18,7 @@ const projectData = [
       <FaNodeJs key="nodejs" className="text-green-600 text-4xl" />,
       <SiMongodb key="mongodb" className="text-green-500 text-4xl" />,
     ],
-    liveLink: "https://jersy.jersyman.online",
+    liveLink: "https://jersy.gopakumarka.site/",
     githubLink: "https://github.com/gopakumar-k-a/first_project",
     frontEndLinkGit: null,
     backEndLinkGit: null,
@@ -38,7 +38,7 @@ const projectData = [
       <SiMongodb key="mongodb" className="text-green-500 text-4xl" />,
       <DiRedis key="redis" className="text-red-500 text-4xl" />,
     ],
-    liveLink: "https://umz.jersyman.online",
+    liveLink: "https://umz.gopakumarka.site",
     githubLink: "",
     frontEndLinkGit:
       "https://github.com/gopakumar-k-a/usedMarketZone-frontend.git",
