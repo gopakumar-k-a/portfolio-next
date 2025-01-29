@@ -61,7 +61,7 @@ export default function Home() {
             <br />
             You can see my recent projects{" "}
             <span
-              onClick={() => route.push("/projects")}
+              onClick={() => route.push("/project")}
               className="font-bold text-red-500 underline cursor-pointer hover:text-blue-500"
             >
               here{" "}
